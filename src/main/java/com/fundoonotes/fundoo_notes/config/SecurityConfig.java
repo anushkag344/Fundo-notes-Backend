@@ -87,7 +87,7 @@ public class SecurityConfig {
         CorsConfiguration config = new CorsConfiguration();
 
         // Angular + React
-        config.setAllowedOriginPatterns(List.of("http://localhost:*", "https://*"));
+        config.setAllowedOriginPatterns(List.of("http://localhost:*", "https://*", "https://fundo-notes-frontend.vercel.app"));
 
         config.setAllowedMethods(List.of(
                 "GET",
