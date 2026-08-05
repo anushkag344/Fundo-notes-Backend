@@ -87,7 +87,7 @@ public class SecurityConfig {
         CorsConfiguration config = new CorsConfiguration();
 
         // Angular + React
-        config.setAllowedOriginPatterns(List.of("http://localhost:*"));
+        config.setAllowedOriginPatterns(List.of("http://localhost:*", "https://*"));
 
         config.setAllowedMethods(List.of(
                 "GET",
