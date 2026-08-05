@@ -18,7 +18,7 @@ public class EmailServiceImpl implements EmailService {
     @Autowired
     private JavaMailSender mailSender;
 
-    @Value("${spring.mail.username}")
+    @Value("${spring.mail.username:anushkag344@gmail.com}")
     private String fromEmail;
 
     private static final String APP_URL = "http://localhost:4200";
@@ -332,6 +332,7 @@ public class EmailServiceImpl implements EmailService {
             System.out.println("HTML Email sent successfully to: " + to + " [Subject: " + subject + "]");
         } catch (Exception e) {
             System.err.println("Failed to send HTML email to " + to + ": " + e.getMessage());
+            e.printStackTrace();
         }
     }
 }
