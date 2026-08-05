@@ -30,14 +30,16 @@ spring:
 
   # ---------- RABBITMQ ----------
   rabbitmq:
+    addresses: ${RABBITMQ_URL:}
     host: ${RABBITMQ_HOST:localhost}
-    port: ${RABBITMQ_PORT:5671}
+    port: ${RABBITMQ_PORT:5672}
     username: ${RABBITMQ_USERNAME:guest}
     password: ${RABBITMQ_PASSWORD:guest}
     virtual-host: ${RABBITMQ_VHOST:${RABBITMQ_USERNAME:guest}}
     ssl:
-      enabled: ${RABBITMQ_SSL_ENABLED:true}
+      enabled: ${RABBITMQ_SSL_ENABLED:false}
     connection-timeout: 5000ms
+
 
 
 
