@@ -30,6 +30,7 @@ spring:
 
   # ---------- RABBITMQ ----------
   rabbitmq:
+    enabled: ${RABBITMQ_ENABLED:false}
     addresses: ${RABBITMQ_URL:}
     host: ${RABBITMQ_HOST:puffin.rmq2.cloudamqp.com}
     port: ${RABBITMQ_PORT:5671}
@@ -39,6 +40,9 @@ spring:
     ssl:
       enabled: ${RABBITMQ_SSL_ENABLED:true}
     connection-timeout: 5000ms
+    listener:
+      simple:
+        auto-startup: false
 
   # ---------- MAIL (for OTP & Reminders) ----------
   mail:

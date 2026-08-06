@@ -11,7 +11,7 @@ public class ReminderConsumer {
     @Autowired
     private EmailService emailService;
 
-    @RabbitListener(queues = RabbitMQConfig.REMINDER_QUEUE)
+    @RabbitListener(queues = RabbitMQConfig.REMINDER_QUEUE, autoStartup = "${RABBITMQ_ENABLED:false}")
     public void receiveReminder(String message) {
 
         System.out.println("Received from RabbitMQ: " + message);
