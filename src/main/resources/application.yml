@@ -7,9 +7,9 @@ spring:
 
   # ---------- POSTGRESQL ----------
   datasource:
-    url: ${DB_URL}
-    username: ${DB_USERNAME}
-    password: ${DB_PASSWORD}
+    url: ${DB_URL:jdbc:postgresql://ep-quiet-band-aygcmxkj.c-5.us-east-2.aws.neon.tech/neondb?sslmode=require}
+    username: ${DB_USERNAME:neondb_owner}
+    password: ${DB_PASSWORD:npg_bTHutrnRKe37}
     driver-class-name: org.postgresql.Driver
 
   jpa:
@@ -24,31 +24,28 @@ spring:
   # ---------- REDIS ----------
   data:
     redis:
-      host: ${REDIS_HOST}
-      port: ${REDIS_PORT}
-      password: ${REDIS_PASSWORD:}
+      host: ${REDIS_HOST:desired-tahr-151099.upstash.io}
+      port: ${REDIS_PORT:6379}
+      password: ${REDIS_PASSWORD:gQAAAAAAAk47AAIgcDJlOGZlNzVjODJhNTk0OTk5YjAwNGYzZTlmNDNhMzAwYQ}
 
   # ---------- RABBITMQ ----------
   rabbitmq:
     addresses: ${RABBITMQ_URL:}
-    host: ${RABBITMQ_HOST:localhost}
+    host: ${RABBITMQ_HOST:puffin.rmq2.cloudamqp.com}
     port: ${RABBITMQ_PORT:5672}
-    username: ${RABBITMQ_USERNAME:guest}
-    password: ${RABBITMQ_PASSWORD:guest}
-    virtual-host: ${RABBITMQ_VHOST:${RABBITMQ_USERNAME:guest}}
+    username: ${RABBITMQ_USERNAME:mgtwtxz}
+    password: ${RABBITMQ_PASSWORD:qjZ7MvkErzT4f7TiCA0oOuNSvyTbuPpI}
+    virtual-host: ${RABBITMQ_VHOST:mgtwtxz}
     ssl:
       enabled: ${RABBITMQ_SSL_ENABLED:true}
     connection-timeout: 5000ms
 
-
-
-
   # ---------- MAIL (for OTP & Reminders) ----------
   mail:
-    host: ${MAIL_HOST}
-    port: ${MAIL_PORT}
-    username: ${MAIL_USERNAME}
-    password: ${MAIL_PASSWORD}
+    host: ${MAIL_HOST:smtp.gmail.com}
+    port: ${MAIL_PORT:587}
+    username: ${MAIL_USERNAME:anushkag344@gmail.com}
+    password: ${MAIL_PASSWORD:nesmbccvdagjknhw}
     properties:
       mail:
         smtp:
@@ -68,21 +65,21 @@ spring:
       client:
         registration:
           google:
-            client-id: ${GOOGLE_CLIENT_ID}
-            client-secret: ${GOOGLE_CLIENT_SECRET}
+            client-id: ${GOOGLE_CLIENT_ID:77956562772-naaalloqkofkpn41fc5u75puunmm0a8k.apps.googleusercontent.com}
+            client-secret: ${GOOGLE_CLIENT_SECRET:dummy_secret}
             scope:
               - email
               - profile
 
 # ---------- JWT ----------
 jwt:
-  secret: ${JWT_SECRET}
+  secret: ${JWT_SECRET:7fd52ad8b81379ded4daa446bcfccde9442aaa41bd40bc64c17f5348a6a1cea7}
   expiration: ${JWT_EXPIRATION:86400000}
 
 # ---------- APP-SPECIFIC ----------
 app:
   oauth2:
-    redirect-uri: ${OAUTH2_REDIRECT_URI:http://localhost:4200/login}
+    redirect-uri: ${OAUTH2_REDIRECT_URI:https://fundo-notes-frontend.vercel.app/login}
 
 # ---------- SWAGGER / OPENAPI ----------
 springdoc:
