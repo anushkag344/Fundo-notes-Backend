@@ -92,8 +92,7 @@ public class SecurityConfig {
         config.setAllowedOriginPatterns(List.of(
                 "http://localhost:*",
                 "https://*.vercel.app",
-                "https://fundo-notes-frontend.vercel.app",
-                "https://*"
+                "https://fundo-notes-frontend.vercel.app"
         ));
 
         config.setAllowedMethods(List.of(
